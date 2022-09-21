@@ -6,13 +6,162 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tirage Sujet de Veille | Hala Ziani</title>
+    <link rel="stylesheet" href="../Style/style.css">
 </head>
 
 <body>
-    <h1 class="text-3xl font-bold">
-        Hello world!
-    </h1>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <header>
+        <nav class="
+          flex flex-wrap
+          items-center
+          justify-between
+          w-full
+          py-4
+          md:py-0
+          px-4
+          text-lg text-gray-700
+          bg-white
+        ">
+            <div>
+                <a href="youcode.ma">
+                    <img src="https://simplon.co/storage/36009/logo-youcode-ma.png" alt="logo-youcode-ma" class="w-32">
+
+                </a>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" id="menu-button" class="h-6 w-6 cursor-pointer md:hidden block"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+
+
+            <div class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
+                <ul class="
+              pt-4
+              text-base text-gray-700
+              md:flex
+              md:justify-between 
+              md:pt-0">
+                    <li>
+                        <a class="md:p-4 py-2 block hover:text-sky-400" href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="md:p-4 py-2 block hover:text-sky-400" href="./StudentList.html">Student
+                            List</a>
+                    </li>
+                    <li>
+                        <a class="md:p-4 py-2 block hover:text-sky-400" href="./Topics.html">Topics List</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="px-4">
+        <div class="
+          flex
+          justify-center
+          items-center
+          bg-white
+          mx-auto
+          max-w-2xl
+          rounded-lg
+          my-16
+        ">
+            <h1 class="text-2xl font-medium">
+                Welcome to the Youcode Students' Topics generator
+            </h1>
+        </div>
+        <!-- <div class="Topics">
+            <aside class="Topics-list">
+                <h1 class="text-2xl font-medium">
+                    <a href="./Topics.html">add a new topic</a>
+                </h1>
+            </aside>
+        </div> -->
+        <!-- <div class="StudentList bg-gray-100 rounded p-2 ">
+            <div>
+                <h1 class="text-2xl font-medium">
+                    <a href="./StudentList.html">
+                        &ThinSpace;
+                        Student List
+                    </a>
+                </h1>
+                <div>
+                    <div class="px-6 pt-6 overflow-x-auto">
+                        <table class="w-full whitespace-nowrap">
+                            <tbody class="flex gap-6">
+                                <tr tabindex="0" class="focus:outline-none">
+                                    <td>
+                                        <div class="flex items-center">
+                                            <div class="bg-gray-200 rounded-sm p-1">
+                                                <img src="data:image/png;base64,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"
+                                                    alt="" width="28">
+                                            </div>
+                                            <div class="pl-3">
+                                                <div class="flex items-center text-sm leading-none">
+                                                    <p class="font-semibold text-gray-800">Hafid Ben Hafed</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="pl-16">
+                                        <div>
+                                            <p class="text-sm font-semibold leading-none text-right text-gray-800">
+                                                22/9/2022
+                                            </p>
+                                            <div
+                                                class="flex items-center justify-center px-2 py-1 mt-2 bg-green-100 rounded-full">
+                                                <p class="text-xs leading-3 text-green-700">Methode Agile</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr tabindex="0" class="focus:outline-none">
+                                    <td>
+                                        <div class="flex items-center">
+                                            <div class="bg-gray-200 rounded-sm p-1">
+                                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABFFBMVEVYZfL///////3///xYZfH//f9YZfT///r///hYZPb//f79///9//3//fz7//9YZe////RYZutZY/f+//L/+v/7//dWaOdWY/74+/9bYvj3//lUZ+9la9dSZfb0/P1OV9fI0PFUXPZOV+Ty9//d5vm9xeVZXtdXXv/n7/lKVuJJU+RPXudzeeSbnNm8vejQ2fnW4eyTmN5vddCGjd3R2/OrtdpfaM99hN/R0evl7/WnrOqPmdJ6gNCIjtlWYNFHWs9lZ+KbpdVvc95OUsy4vNmmrOD+/ehud8u+wuunqtJoa85WXtKSn9KLmtmHjsOFjtFjbb3JyvW1teu7v9aKk915gN+iq8tKVb3BwtHN1uShn+B+gctPnZ67AAAQSklEQVR4nO2cDVucuNrHhxASAoSXMMAgziDMOFJZbaujtdVOa3etU22PZ3fbs88ev//3eAK21Y7MS9sB9zpXfr2stjKQP0nu+05yJ62WQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBALBP4SoRVC0zIUQwrrLUg9Wi/Cv/2VQ+ed/GYIgr8XFoILaS/PTfC7iTVlh8QMJ00cpW+ajKN0mtzJvbvCP08wIL1HIa4ywkEEH5vHwl53dwWYcOSycbUd4NUPoDB8/2X26N0xDK4os3nOhZZEwQE6D5V+M40RW5MBu5FtWHq/v746er2Hg9fZCXpmzm2rxS5Ycm54sm9no4OTw15xFVpeFjuPAZeq/OSLEGPFhEKbDZ7uDnooNSl33LT5KQwSDmS0OkpCx+Lnbtl1b5W+k8/jFpzyHrW7QteAyfbhBwoDBrfTweKMPJAlokkKBpFEqnbRYFM5RyFC+A9S2UiLLWPWyzZfDbV61y/nSukHlF7cLjgXj8fGoZ+q6gU1TloFsYNxW5FEcRGU/RHdsydefISHOq0yRscevxqqqUpnast4/+tdfaQhJcetW6yFdjhWwKOJ9kGyll1dHHQnIgNcg5/M3jn7CAlR0N8KbcUpYur2dEpJ2u4SXHxE/SI6Ly8HtpwqhWOpvnsQJNz08bOCm6+Ek8vfLfJTEewdZZ80FANxKuwGom7/mcf76zcnH03cHm5ubGxz+7eDd8cdnb16nl/mvg28/IeEC3Vgzs3cX2wnpwsh5MKvKqyBiLImvRibvQKpXoVBS+79tDPodE8hfRd98k4FkdrLBxmZv6hP8HlQ2sa3KUmfjZAh5K3k4m8P8Flo/yzyjLWmaolQpVHg12ry03O5omgSK+pG1AoX/Br99K0uyVIEu8QsU2zVHT8et4OH8BnOCdAOveaqnG7wWqxSaOqaKrusy5pUjY73AKOCdzdD5G2grVQplblY9DIDnqmd59+FaaRDFH9d47RQtb1ravbZ3p4V+bowLPlBeQN/2zsnD+Y0uOsyM+cp+GopHlw/XSqN8gmnNChXbOMsfyiMi/9p0axYo6bLd//eDKRwOXKrXKxBgRTNG6QNI5OGWn7zjphAvMDE/j0alq1bQeOzGHEIOOwZVahdYkB2iVsMuA4V+kG7KGPNhRP1QbmxmD1DqkghbJ6YtGV4DAjWA+xesaZcRBcMRtpVGFBbR+GTYtNsn+Qe9iQZ6g+Ka545vNVmPKLgc1O7s7wC8UcxQk3PjiH0w3cYUAqy9XXu2hZocKKLxwFZrdvZ3wJLtHcWOBZtZJUAtiNB73daaU2iqWlu+fs0aGmWwyN969RwUsylNUUwAybwn+qwRr4hIK/wg8SFs5ei8HoUAUGw+4w9uRKHFwr8GEm6wCsvhMHY34rCZGRsLkn9Jsqo2ErDdKgS2ed6MP0SWk48U3LRCGSjuJG3GlvrJL16Dzv4Wu+c4jfh8tD3BzVXfVwBQjBfNjBLZuGc8QB0C0HazuAmFKD3lprt5hZLO7fc+adXfTlE8UFT1ARQCt42Pap+xCZGDzk1VeYg6BMWS3SFhc1ZcVwBjKJ+YfOT7EAqL2G0nZ1ZYo8AWDFmcrdlKc0H3XYVFcPoKWTUGp4j4hOxLFOiVyylNKOztwajWRup38wlWGhw3TSu0X+RRjdYUQT847C9RGE2TDN5VKV1mNpUXnF9MZXkZJ6sN0joTbRCJgqsl6g+4HjZM0zQ8b7FEYPMIVynXFJdQSDvrdTZSxKx8cykzWuSO8BIr7eWu1SgXqS1Th9jYyWscQiEWXWZLlANgACTDBBirxfrpAlxe42umCVR3iTYNwCiuTyDH2VsUkvIxFQD9364uxuO946Me74vzr6dU7k/2Ly4O955OOtO5KvdRcG9Yo6mBJHmnzw9ngNoGvdNf8zBgjJH88qCjqpUpDCUat0Wd9+PtLVakEG1fHvRMbqlVe2a9A0rt/RpbKWTpSF9UJ+rReupYhFj8TVtOsjfAxkyFiuuODlPC0E3uE7k8H7i4zNqYrVDdrXNJmFz2lfkKgf37ZSuACEHH4hoRQ4ejykSbm4vNjXEYQufGiSPIwvFozaOKOrOdAgUPhjUqROeLBk7g73jL91vFbA6CVov4LDgcGBRUekbqPo5Zy/f9z3mIfisIx088W5ltc2SN9g5rVNh9YdO5c4igM/a7IddWVp8FSRBar99IGMgVH6NS/98Ov5iEn504cyCJ9jq4bc58AKbUq7EjonQkybPrUKZte4dBeDeDufgx3S0SSKcuVooJ19M8+JI5/eVilB4Y1VlEN69QoeZvOWtF9YTfKM4UebbHp6qSXVY8GI15750OhTTTo9ll6/48PTzsu/MUqsbfj0Ji1VOP6I2pzVGo2/gsqVKYTlR12jxSU6XvEhRFUxOE0EomcxTqiu3245DVpfClSsEchdTcq5x2z1/a9pQJBkC3lb2A99SpOBpaW9dzogpDUV19HZKacqTJH648WyHAWnZZGfejcWfayQCs29kl5KbWn4pQILroz5wGAoZOVf2jz69avTzuxeMjBc9xFlj9Pa8e2aQDfG9IoskbKUQETU9jQ/RoYM95hqriAxKh1Udu3KBzQ9Oep1CS/8irHgz97SMw/TlMwaRSoYXSozmPKBJUjx7V0Q2RRayxot0r6R0U6UVatdfF8rc3JHvKifMefRDOULg5+xnFOhsY5NG9j/08BLH8jTQ/8JdekCqF0Nl+bEx7fAykg1l1uDHnEUURekOnhoE+Iyx/Wdx/dkyjyH9ULw6R9AmedgC6Jm/mhcLpdg1RPpo/4Qy8N1zhyjtiN2TJ6fx3K+kbiV8lEQ0zbSqYBp5ij1IuD031KAR5d1+QPixdbTk1xDRc4WSBQvv5sFJgcGHei7wNxc0uiz0jU3XBw9kLc9GU+k5ikZUrhGyujStQVPOkMqZJzsC9VmootnldjrKmrmb5qbFI4W4CV7/OZpEon978Ma1Q039LKsx4sZZzr8yaZJt/xtb9rcIoHi1cXT5KyeptaUSiRf3DVpXeJZnap8T/QU7M9r1hpUJtozd2GLnbSvkwA+a/eHTBFJ02ymvIrEGtcNxZ8GqxYf6ZWuibLsJHiY8Gyv3EjXKd5c9HQTlc/gwMExbFA3XO+LBEzuIachYQZIcLHqxhz9Svk3B827VQ1yf5qVSpkNN5mQfd22d0LcfJj03aNuY3llLhyvshV3ixQGGRgoKzi5DdKXSrm173FA3f86KlQtrfC+/UBo/D82c9rCkLFmBpf7j6zdHFeOXZAoW6LFMsZ3vJnSXMKD/pm0bFTFSpUNWz89t5JfiahSd9FS9c7qCd9Va3FoULlixkoLQVW+m/f0RuXjFC7NG7TltV5WqFstpWex+3y+2W5abL8WnPlhSsLli8o711uHKFLRQlHxa10mJfk8L/Ovo0TAnM83y4P5BUe/bcoKRRQxpdx2neDZM0fjmQbGXhFiqucG2PrN7jc4XHi55clpkPhNtetrnz8enZZuYV450FazmGOdg8/XB8upkZBgbLLE1S71NliP/zCpdaGDUwBlTjVsflDU5btEWNI7uuKvFbY9emirRMlgf1ns3ZAl+7wrKHUY1yNFpuyFigkVtaSstFREXR9elxZLXCTzW10mUUlptFjWKygVdjsUKqgQVjIdvQZVvXsedhY81YJkOgrMOVKyRRcrbEw28LvkT7/Hzll6/F+zS/KNRfJqvvh1zhzvcorBFAzf16FC5lS5uA8lHa6qM2Yv1jFILaFH54aGlf4ApXvx+RR21o/yHy9argMc3qT6Aq4tL9h8jXq4KuXax+vhQiSD4tjEsbgq6t1zCLscz4sClo75LVMIsBw8NyFmOOU9Yko0ynWdp1TwF4BKcVgwsqzV5f43cHz4fhyhWilh/EGpAoqJzzLsezbu9gty8ZtmtjwzC+r8JlQA3dlnkwi7PTDbNYAq+ccNM01TXB4DJY+Zw3Qj4bZjyS1ioDx1Jh/328tf6fzMRqeXrJ9ymUVdtu22+9J8fjJH7XmbGMB2xeyW13FAcrX7dAJELDDUl1q8ffpcLTRwnsJvH+UU/SKf6+ZHdd52Nnuz/5FDMSWn/9Hw/YKzNwVI3aWN7Ng9X3Q2IhZ7xretPL1bcKqTnaj1shQ/nr96OO/l1HEYC3tt77+8M4CaDvxx8zfdZSrCZ5nnk2rOO8wuIQPRZfZVK78t0Wsy6upo/2cogsJ8kv3h91ipX9uxeVObW0SOUr/1uXbvIWy2yi/ubT9RhZFgrTq4GkVvfDYpIEG4O9PEBOTfv0uuFw4rrFURVV71emAEtHJ2no+L7jxIcnu6O+CQAfBauqUZ69o5etWSmGx0YxhiwOaZNw/+js2as0QZEPW/H+gNdS9UDUUKlid3Zf1TCD8RULwfhZZtr31lm+ViTA8uBpnrKAREGYxsOTs41BTwFcjaJQ1S6PuSp1ucXRSmu9weT93uEwJyhyyNbWcCfzdNm7v+hfgHkLdUcnMalzjx4fWJNkvLs2pzO2qWc8P/tkkVbkOJa1laTx+PxqZ/f30SDr93omp9fLssHjye5/X/5ymW8njLEwJF3inEz6BlXUWfv+VNfrvxvDrbDOHd0hsiIrjK9HlYmxN8n0mqLZ8mTYtVCXl9xxItgKGMzTPPbH4/WC8ethHMd5yjs2aVncKJZHLgbDQWGquUOilZ5Ga+uj89RHYa1HRlq8UC0/DC/fd7iLnl7Uv0myNFTc7pyjwCp6CyTF5DDhFoSh4qduAf9/q/gttG4P4Qt9CF9KHV0qJ6S+6QSfE4el7CrmL6RICaxRYUmRmYeGuz3uGlX33k5EwJupeZAGEflS+C9moTII+XrSIC95+rdp33O35fF0uo3772Knzp0W94Dp+m7P5G5rKrkHAE1d6x8y5H//hCY672FlSiGwFUVzzf7BehI51vSif510GYsvjkzeIqeCbG4qzdMwjH5g6zzKN3Xl2/lSXWurttSZXCTFAZPzjkJdOZbvt7aSvT/XzKlxAOYueRigH1lnR0VG23TCV8foTfYSYkVRw+cNW4RAhyTbF5Mpe0Oxfp3AiAQ/0GfY1n/xlwXucgaVBxa9g/W05RTyinO/m+yIxRMZQzAfn2U67Rg8ypIN06Bt42BY/v4Hbkn8eKSqfOjE4xebe0Zbzk5jx+qSBzs5mRHuH1kSHz/pGZ5tKxK2bTU7/OHTYx3i7HGHoRQeVTK83sbLOLEsq1ET+i1Fwo/lRyF7dLKb6dyqA6VtXofBD86hQD8gyY7Bvb4rq+bgbD0PicOfYT3sebsoiPwoYPn4arPnua56EAfsRy0eZGEQj1xXN7PJs/HYb4VhF91Pm2oQ+NmjW1arOPL4cn/SfzIkkf+DW5FR8Dq02Ot+f/c6zq0izwwW53s36iOq+GwFCql5PByXB/T84K2KPEWU+6+GZTj3DzyLnrFVLOrx6B7Vulv7ZyjOfP5pjQTBJoOz76I4Ff/np6K5d1jBXeqBkO4Ksly6hN9nBaWpiRX0Q7Sa2wgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgqIn/B55Qa+6z7C4lAAAAAElFTkSuQmCC"
+                                                    alt="" width="28">
+                                            </div>
+                                            <div class="pl-3">
+                                                <div class="flex items-center text-sm leading-none">
+                                                    <p class="font-semibold text-gray-800">Hafid Ben Hafed</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="pl-16">
+                                        <div>
+                                            <p class="text-sm font-semibold leading-none text-right text-gray-800">
+                                                22/9/2022
+                                            </p>
+                                            <div
+                                                class="flex items-center justify-center px-2 py-1 mt-2 bg-green-100 rounded-full">
+                                                <p class="text-xs leading-3 text-green-700">Methode Agile</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- buttun generate random student-->
+        <div class="flex justify-center items-center">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10"
+                onclick="generateRandomStudent()">
+                Generate Random Student
+            </button>
+        </div>
+    </div>
+    <script src=" https://cdn.tailwindcss.com"></script>
+    <script src="../Js/index.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
+
 
 </html>
