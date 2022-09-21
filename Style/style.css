@@ -1,0 +1,12 @@
+.Topics-list {
+  padding-left: 0.5rem;
+  box-shadow: inset 5px 0 5px -5px #29627e;
+  font-style: italic;
+  color: #29627e;
+}
+.Topics {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 5px;
+  width: 100%;
+}
