@@ -1,4 +1,19 @@
 {
   "student": [
+    {
+      "nom": "abdelhak elaachari",
+      "date": "23/9/2022",
+      "id": 1
+    },
+    {
+      "nom": "Faiza Rabhi",
+      "date": "24/9/2022",
+      "id": 2
+    },
+    {
+      "nom": "reda daalabi",
+      "date": "25/9/2022",
+      "id": 3
+    }
   ]
 }
