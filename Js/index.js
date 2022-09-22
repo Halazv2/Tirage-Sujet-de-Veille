@@ -10,6 +10,21 @@ localStorage.setItem("day", date.getDate());
 localStorage.setItem("month", date.getMonth() * 1 + 1);
 localStorage.setItem("year", date.getFullYear());
 
+const isWeekend = (date = new Date()) => {
+  return date.getDate() % 6 === 0;
+};
+const Holyday = (day, month) => {
+  const holydays = [
+    { day: 1, month: 1 },
+    { day: 11, month: 1 },
+    { day: 1, month: 5 },
+  ];
+  for (let i = 0; i < holydays.length; i++) {
+    if (day == holydays[i].day && month == holydays[i].month) {
+      return true;
+    }
+  }
+};
 const generateRandomStudent = () => {
   let month = localStorage.getItem("month") * 1;
   let day = localStorage.getItem("day") * 1;
@@ -40,12 +55,18 @@ const generateRandomStudent = () => {
       month++;
       localStorage.setItem("month", month);
       localStorage.setItem("day", day);
+    } else if (Holyday(day, month)) {
+      day++;
+      localStorage.setItem("day", day);
     } else {
       day++;
       localStorage.setItem("day", day);
     }
   }
 
+  const Weekend = isWeekend(new Date(year, month, day));
+  console.log(Weekend);
+  return;
   const fullDate = `${localStorage.getItem("day")}/${localStorage.getItem(
     "month"
   )}/${localStorage.getItem("year")}`;
