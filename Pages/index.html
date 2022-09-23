@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="../Style/style.css" />
 </head>
 
-<body>
+<body class="bg-gradient-to-r from-blue-400 to-blue-600">
     <header>
-        <nav
-            class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-white">
+        <nav class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700">
             <div>
                 <a href="youcode.ma">
                     <img src="https://simplon.co/storage/36009/logo-youcode-ma.png" alt="logo-youcode-ma"
@@ -41,19 +40,19 @@
     </header>
 
     <div class="px-4">
-        <div class="flex justify-center items-center bg-white mx-auto max-w-2xl rounded-lg my-16">
-            <h1 class="text-2xl font-medium">
+        <div class="flex justify-center items-center mx-auto rounded-lg my-12">
+            <h1 class="text-4xl font-bold text-gray-700">
                 Welcome to the Youcode Students' Topics generator
             </h1>
         </div>
 
         <div>
-            <div class="wrapper lg:flex md:flex-wrap bg-white rounded-lg my-16 justify-around items-center">
+            <div class="wrapper lg:flex md:flex-wrap bg-gray-100 shadow-xl p-6 rounded-lg justify-around items-center">
                 <!-- Student table -->
                 <div class="sm:full">
                     <div>
-                        <div class="flex justify items-center bg-white mx-auto max-w-2xl rounded-lg lg:my-16">
-                            <h1 class="text-2xl font-medium">Student List</h1>
+                        <div class="flex  justify-center items-center mx-auto max-w-2xl my-4">
+                            <h1 class="text-2xl font-bold text-center">Student List</h1>
                         </div>
                     </div>
                     <div class="max-w-7xl mx-auto">
@@ -78,66 +77,9 @@
                                                 class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">
                                                 Status
                                             </th>
-                                            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                                                <span class="sr-only">Actions</span>
-                                            </th>
                                         </tr>
                                     </thead>
-                                    <tbody class="divide-y divide-gray-200 bg-white">
-                                        <tr>
-                                            <td
-                                                class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-6">
-                                                1
-                                            </td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                                Hafid
-                                            </td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm">
-                                                2021-01-01
-                                            </td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm">
-                                                <span class="flex justify-center">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                        class="h-5 w-5 text-green-500" viewBox="0 0 20 20"
-                                                        fill="currentColor">
-                                                        <path fill-rule="evenodd"
-                                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                                            clip-rule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                            </td>
-                                            <td class="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                                <div class="inline-block text-left" x-data="{ menu: false }">
-                                                    <button x-on:click="menu = ! menu" type="button"
-                                                        class="flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
-                                                        id="menu-button" aria-expanded="true" aria-haspopup="true">
-                                                        <span class="sr-only"></span>
-                                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                            <path
-                                                                d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-                                                        </svg>
-                                                    </button>
-                                                    <div x-show="menu" x-on:click.away="menu = false"
-                                                        class="origin-top-right absolute right-32 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
-                                                        role="menu" aria-orientation="vertical"
-                                                        aria-labelledby="menu-button" tabindex="-1">
-                                                        <div class="" role="none">
-                                                            <a href="#"
-                                                                class="text-gray-500 font-medium hover:text-gray-900 hover:bg-gray-50 block px-4 py-2 text-sm"
-                                                                role="menuitem" tabindex="-1" id="menu-item-0">
-                                                                Add topic
-                                                            </a>
-                                                            <a href="#"
-                                                                class="text-red-500 font-medium hover:text-gray-900 hover:bg-gray-50 block px-4 py-2 text-sm"
-                                                                role="menuitem" tabindex="-1" id="menu-item-0">
-                                                                Delete
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                    <tbody class="divide-y divide-gray-200 bg-white" id="StudentTb">
                                     </tbody>
                                 </table>
                             </div>
@@ -149,9 +91,15 @@
 
                 <!-- button -->
                 <div class="flex justify-center items-center">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10"
+                    <button
+                        class="flex justify-center items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10"
                         onclick="generateRandomStudent()">
-                        Generate Random Student
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                clip-rule="evenodd" fill-rule="evenodd"></path>
+                        </svg>
+                        <span class="ml-2">Random Student</span>
                     </button>
                 </div>
                 <!-- end button -->
@@ -159,8 +107,8 @@
                 <!-- Topics table -->
                 <div class="">
                     <div>
-                        <div class="flex justify items-center bg-white mx-auto max-w-2xl rounded-lg lg:my-16">
-                            <h1 class="text-2xl font-medium">Topics List</h1>
+                        <div class="flex justify-center items-center mx-auto max-w-2xl my-4 text-center">
+                            <h1 class="text-2xl font-bold text-center">Topics List</h1>
                         </div>
                     </div>
 
@@ -192,60 +140,6 @@
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-200 bg-white" id="TopicTb">
-                                        <tr>
-                                            <td id="topicId"
-                                                class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-6">
-                                                1
-                                            </td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" id="topicName">
-                                                Hafid
-                                            </td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm" id="topicDate">
-                                                2021-01-01
-                                            </td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm">
-                                                <span class="flex justify-center">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                        class="h-5 w-5 text-green-500" viewBox="0 0 20 20"
-                                                        fill="currentColor">
-                                                        <path fill-rule="evenodd"
-                                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                                            clip-rule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                            </td>
-                                            <td class="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                                <div class="inline-block text-left" x-data="{ menu: false }">
-                                                    <button x-on:click="menu = ! menu" type="button"
-                                                        class="flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
-                                                        id="menu-button" aria-expanded="true" aria-haspopup="true">
-                                                        <span class="sr-only"></span>
-                                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                            <path
-                                                                d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-                                                        </svg>
-                                                    </button>
-                                                    <div x-show="menu" x-on:click.away="menu = false"
-                                                        class="origin-top-right absolute right-32 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
-                                                        role="menu" aria-orientation="vertical"
-                                                        aria-labelledby="menu-button" tabindex="-1">
-                                                        <div class="" role="none">
-                                                            <a onclick="toggleModal('modal-id')"
-                                                                class="text-gray-500 font-medium hover:text-gray-900 hover:bg-gray-50 block px-4 py-2 text-sm"
-                                                                role="menuitem" tabindex="-1" id="menu-item-0">
-                                                                Add topic
-                                                            </a>
-                                                            <a href="#"
-                                                                class="text-red-500 font-medium hover:text-gray-900 hover:bg-gray-50 block px-4 py-2 text-sm"
-                                                                role="menuitem" tabindex="-1" id="menu-item-0">
-                                                                Delete
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -257,7 +151,7 @@
 
             <!-- Model -->
 
-            <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none  focus:outline-none justify-center items-center"
+            <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
                 id="modal-id">
                 <div class="relative my-6 mx-auto w-1/2">
                     <!--content-->
@@ -279,7 +173,7 @@
                         <!--body-->
                         <div class="relative p-6 flex-auto w-full">
                             <input type="text" placeholder="Enter Topic ..." id="TopicInput"
-                                class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 border-grey-200 border  outline-none focus:outline-none focus:ring w-full" />
+                                class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 border-grey-200 border outline-none focus:outline-none focus:ring w-full" />
                         </div>
                         <!--footer-->
                         <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
