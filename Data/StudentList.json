@@ -1,58 +1,40 @@
-[
+{
+  "studentList": [
     {
-        "id" : 1,
-        "name": "kamal Rhrabla"
+      "id": 3,
+      "name": "MOhammed ait gaba"
     },
     {
-        "id" : 2,
-        "name": "abdelhak elaachari"
+      "id": 4,
+      "name": "ayoub basidi"
     },
     {
-        "id" : 3,
-        "name": "MOhammed ait gaba"
+      "id": 6,
+      "name": "reda daalabi"
     },
     {
-        "id" : 4,
-        "name": "ayoub basidi"
+      "id": 8,
+      "name": "ayoub elgountari"
     },
     {
-        "id" : 5,
-        "name": "jawad doufare"
+      "id": 11,
+      "name": "Hala Ziani"
     },
     {
-        "id" : 6,
-        "name": "reda daalabi"
+      "id": 13,
+      "name": "Amin mesbahi"
     },
     {
-        "id" : 7,
-        "name": "youness nemli"
+      "id": 14,
+      "name": "Faiza Rabhi"
     },
     {
-        "id" : 8,
-        "name": "ayoub elgountari"
+      "name": "Hafid zin",
+      "id": 15
     },
     {
-        "id" : 9,
-        "name": "amine hatim"
-    },
-    {
-        "id" : 10,
-        "name": "oussama ennadafy"
-    },
-    {
-        "id" : 11,
-        "name": "Hala Ziani"
-    },
-    {
-        "id" : 12,
-        "name": "youssef elhajjaj"
-    },
-    {
-        "id" : 13,
-        "name": "Amin mesbahi"
-    },
-    {
-        "id" : 14,
-        "name": "Faiza Rabhi"
+      "name": "ziad ziani",
+      "id": 16
     }
-]
+  ]
+}
