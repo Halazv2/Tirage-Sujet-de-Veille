@@ -1,3 +1,6 @@
+/**
+ * It fetches the data from the server and then displays it in the table.
+ */
 const getStudents = async () => {
   fetch("http://localhost:4400/studentList")
     .then((response) => response.json())
@@ -30,8 +33,13 @@ const getStudents = async () => {
 
 getStudents();
 
+/**
+ * It takes an id as an argument, and then it makes a DELETE request to the server, and then it
+ * refreshes the page.
+ * @param id - the id of the student you want to delete
+ */
 const deleteStudent = async (id) => {
-  fetch(`http://localhost:4400/studentList/${id}`, {
+  await fetch(`http://localhost:4400/studentList/${id}`, {
     method: "DELETE",
   })
     .then((response) => response.json())
@@ -63,7 +71,7 @@ const addStudent = async () => {
 
 
 const getLastStudent = async () => {
-  fetch("http://localhost:4400/studentList")
+  await fetch("http://localhost:4400/studentList")
     .then((response) => response.json())
     .then((data) => {
       const TopicTbody = document.querySelector("#StudentTb");
