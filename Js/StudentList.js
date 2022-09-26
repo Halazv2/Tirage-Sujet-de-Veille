@@ -61,6 +61,7 @@ const addStudent = async () => {
     .catch((error) => console.log(error));
 };
 
+
 const getLastStudent = async () => {
   fetch("http://localhost:4400/studentList")
     .then((response) => response.json())
