@@ -98,10 +98,9 @@ const generateRandomStudent = () => {
     .then((response) => response.json())
     .then((data) => {
       const randomStudent = data[Math.floor(Math.random() * data.length)];
-      // return;
-      // const studentName = document.querySelector("#student-name");
-      // studentName.innerHTML = randomStudent.name;
       saveStudent(randomStudent.name, fullDate);
+      deleteStudent(randomStudent.id);
+      console.log(randomStudent.id);
       setTimeout(() => {
         getLastStudent();
       }, 1000);
