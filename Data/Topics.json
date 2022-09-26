@@ -21,14 +21,9 @@
       "id": 4
     },
     {
-      "name": "sass",
-      "createdAt": "23/9/2022",
+      "name": "ReactJs",
+      "createdAt": "25/9/2022",
       "id": 5
-    },
-    {
-      "name": "Node",
-      "createdAt": "23/9/2022",
-      "id": 6
     }
   ]
 }
