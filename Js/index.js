@@ -23,7 +23,7 @@ const Holyday = (day, month) => {
   }
 };
 const nameOfDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-const randomTopic = "";
+let randomTopic;
 const isWeekend = (date) => {
   console.log(date);
   const day = date.getDay();
@@ -68,8 +68,21 @@ const generateRandomStudent = () => {
       day++;
       localStorage.setItem("day", day);
     } else if (isWeekend(new Date(year, month - 1, day))) {
-      day = day + 3;
-      localStorage.setItem("day", day);
+      if (nameOfDays[new Date(year, month - 1, day).getDay()] === "Fri") {
+        console.log("friday");
+        day += 3;
+        localStorage.setItem("day", day);
+      } else if (
+        nameOfDays[new Date(year, month - 1, day).getDay()] === "Sat"
+      ) {
+        console.log("saturday");
+        day += 2;
+        localStorage.setItem("day", day);
+      } else {
+        console.log("sunday");
+        day += 1;
+        localStorage.setItem("day", day);
+      }
     } else {
       day++;
       localStorage.setItem("day", day);
@@ -81,11 +94,10 @@ const generateRandomStudent = () => {
   const fullDate = `${localStorage.getItem("day")}/${localStorage.getItem(
     "month"
   )}/${localStorage.getItem("year")}`;
-  fetch("../Data/StudentList.json")
+  fetch("http://localhost:4400/studentList")
     .then((response) => response.json())
     .then((data) => {
       const randomStudent = data[Math.floor(Math.random() * data.length)];
-      console.log(randomStudent.name);
       // return;
       // const studentName = document.querySelector("#student-name");
       // studentName.innerHTML = randomStudent.name;
@@ -127,7 +139,7 @@ const addTopic = async () => {
     })
     .then((response) => {
       console.log(response);
-      toggleModal('modal-id');
+      toggleModal("modal-id");
       GetLastTopic();
     })
     .catch((error) => {
@@ -156,37 +168,6 @@ const getTopic = async () => {
                       clip-rule="evenodd" />
               </svg>
           </span>
-      </td>
-          <td class="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-          <div class="inline-block text-left" x-data="{ menu: false }">
-              <button x-on:click="menu = ! menu" type="button"
-                  class="flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
-                  id="menu-button" aria-expanded="true" aria-haspopup="true">
-                  <span class="sr-only"></span>
-                  <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path
-                          d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-                  </svg>
-              </button>
-              <div x-show="menu" x-on:click.away="menu = false"
-                  class="origin-top-right absolute right-32 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
-                  role="menu" aria-orientation="vertical"
-                  aria-labelledby="menu-button" tabindex="-1">
-                  <div class="" role="none">
-                      <a onclick="toggleModal('modal-id')"
-                          class="text-gray-500 font-medium hover:text-gray-900 hover:bg-gray-50 block px-4 py-2 text-sm"
-                          role="menuitem" tabindex="-1" id="menu-item-0">
-                          Add topic
-                      </a>
-                      <a href="#"
-                          class="text-red-500 font-medium hover:text-gray-900 hover:bg-gray-50 block px-4 py-2 text-sm"
-                          role="menuitem" tabindex="-1" id="menu-item-0">
-                          Delete
-                      </a>
-                  </div>
-              </div>
-          </div>
       </td>
     </tr>`;
       });
@@ -230,18 +211,15 @@ const getStudent = async () => {
 getStudent();
 
 const generateRandomTopic = async () => {
-  console.log(randomTopic);
   fetch("http://localhost:4000/Topics")
     .then((response) => response.json())
     .then((data) => {
       const randomTopicName = data[Math.floor(Math.random() * data.length)];
       randomTopic = randomTopicName.name;
-      console.log(randomTopic);
     })
     .catch((error) => console.log(error));
 };
-// generateRandomTopic();
-
+generateRandomTopic();
 const getLastStudent = async () => {
   fetch("http://localhost:3000/student")
     .then((response) => response.json())
@@ -290,39 +268,20 @@ const GetLastTopic = async () => {
           </svg>
       </span>
   </td>
-      <td class="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-      <div class="inline-block text-left" x-data="{ menu: false }">
-          <button x-on:click="menu = ! menu" type="button"
-              class="flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
-              id="menu-button" aria-expanded="true" aria-haspopup="true">
-              <span class="sr-only"></span>
-              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path
-                      d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-              </svg>
-          </button>
-          <div x-show="menu" x-on:click.away="menu = false"
-              class="origin-top-right absolute right-32 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
-              role="menu" aria-orientation="vertical"
-              aria-labelledby="menu-button" tabindex="-1">
-              <div class="" role="none">
-                  <a onclick="toggleModal('modal-id')"
-                      class="text-gray-500 font-medium hover:text-gray-900 hover:bg-gray-50 block px-4 py-2 text-sm"
-                      role="menuitem" tabindex="-1" id="menu-item-0">
-                      Add topic
-                  </a>
-                  <a href="#"
-                      class="text-red-500 font-medium hover:text-gray-900 hover:bg-gray-50 block px-4 py-2 text-sm"
-                      role="menuitem" tabindex="-1" id="menu-item-0">
-                      Delete
-                  </a>
-              </div>
-          </div>
-      </div>
-  </td>
 </tr>`;
       TopicTbody.innerHTML += lastTopicHtml;
+    })
+    .catch((error) => console.log(error));
+};
+
+const deleteStudent = async (id) => {
+  fetch(`http://localhost:4400/studentList/${id}`, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      refreshPage();
     })
     .catch((error) => console.log(error));
 };
