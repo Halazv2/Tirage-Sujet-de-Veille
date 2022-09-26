@@ -1,44 +1,16 @@
 {
   "studentList": [
     {
-      "id": 3,
-      "name": "MOhammed ait gaba"
+      "name": "faiza",
+      "id": 1
     },
     {
-      "id": 4,
-      "name": "ayoub basidi"
+      "name": "val",
+      "id": 3
     },
     {
-      "id": 6,
-      "name": "reda daalabi"
-    },
-    {
-      "id": 11,
-      "name": "Hala Ziani"
-    },
-    {
-      "id": 13,
-      "name": "Amin mesbahi"
-    },
-    {
-      "id": 14,
-      "name": "Faiza Rabhi"
-    },
-    {
-      "name": "Hafid zin",
-      "id": 15
-    },
-    {
-      "name": "ziad ziani",
-      "id": 16
-    },
-    {
-      "name": "douniya ",
-      "id": 17
-    },
-    {
-      "name": "kk",
-      "id": 19
+      "name": "ayoub",
+      "id": 7
     }
   ]
 }
